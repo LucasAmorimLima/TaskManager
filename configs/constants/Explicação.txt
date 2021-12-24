@@ -1,0 +1,6 @@
+A utilização das constantes strings são muito importantes para você 
+poder centralizar uma palavra de retorno de error, sucesso, status HTTP, 
+nome de uma entidade que se repete por várias partes do código pois na hora 
+quando houver uma mudança de valor naquela constantes todas as partes que 
+utilizarem vão ser alteradas sem a necessidade de ficar procurando em cada 
+arquivo pelo projeto.
