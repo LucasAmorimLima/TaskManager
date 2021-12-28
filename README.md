@@ -65,6 +65,8 @@ A quick look at the folder structure of this project.
 3. JWT
 4. Body Paser
 5. joi
+6. lodash
+7. moment
 
 ## :v: Contributing
 
