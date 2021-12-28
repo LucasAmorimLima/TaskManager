@@ -65,7 +65,7 @@ A quick look at the folder structure of this project.
 3. JWT
 4. Body Paser
 5. joi
-6. sequelize
+
 ## :v: Contributing
 
 *NOTE: if you want to change the [project content](./content) or fix any typo you can do that from github's ui without cloning the repo locally*
