@@ -23,10 +23,13 @@ module.exports = (useJoiError = false) => {
     
     const method = req.method.toLowerCase();
     
-
-    if (_.includes(_supportedMethods, method) && _.has(Schemas, route)) {
+    console.log(_.includes(_supportedMethods, method) && _.has(Schemas, route));
+    if (_.includes(_supportedMethods, method) &&  _.has(Schemas, route)) {
+      
       // get schema for the current route
       const _schema = _.get(Schemas, route);
+
+      
       
       if (_schema) {
         // Validate req.body using the schema and validation options
@@ -59,6 +62,5 @@ module.exports = (useJoiError = false) => {
           }
       }
     }
-    next();
   };
 };

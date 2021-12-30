@@ -19,7 +19,7 @@ const Users = require('../models/UsersModel')
             //implementation
         }) 
     };
-    exports.insert  =  async (req, res,next) => {  
+    exports.insert  =  async (req, res) => {  
         const {name,password,email} = req.body     
        
 
@@ -28,7 +28,7 @@ const Users = require('../models/UsersModel')
                 password: password,
                 email: email,
             }).then((result)=>{
-               return res.status(200).send(generateJWT({id :Users.id}))
+               return res.status(200).json(generateJWT({id :Users.id}))
                 //implementation
             }).catch((error)=>{
                 console.log(error);
