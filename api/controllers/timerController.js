@@ -5,21 +5,18 @@ const { updateStatusProject } = require('../services/projectDateUpdate');
         await Timer.findAll().then((result)=>{
             
             const values = {'result':result,'timeDifference': timeDifference(result)}
-            res.status(200).send(values)
-            //implementation
+            return res.status(200).json(values)
+            
         }).catch((error)=>{
-            res.send(error)
-            //implementation
+            return res.status(400).json(error)
         }) 
     }  
 
     exports.show = async (req, res,next) => {
         await Timer.findAll({where: {id: req.params.id}}).then((result)=>{
-            res.status(200).send(result)
-            //implementation
+            return res.status(200).json(result)
         }).catch((error)=>{
-            res.send(error)
-            //implementation
+            return res.status(400).json(error)
         }) 
     };
     exports.insert  =  async (req, res,next) => {  
@@ -32,22 +29,20 @@ const { updateStatusProject } = require('../services/projectDateUpdate');
                 idProject : idProject
             }).then((result)=>{
                updateStatusProject(idProject,result) 
-               return res.status(200).send(result)
+               return res.status(200).json(result)
 
                 //implementation
             }).catch((error)=>{
-                console.log(error);
-                //res.json(error)
+                return res.status(400).json(error)
             })
     };
     
     exports.destroy = async (req, res,next) => {
 
         await Timer.destroy({where: {id:req.body.id}}).then((result)=>{
-            return res.status(200).send(result)
+            return res.status(200).json(result)
         }).catch ((error) =>{
-            res.send(error)
-            //implementation
+            return res.status(400).json(error)
         })
     };  
 
